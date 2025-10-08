@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load Font Awesome (add in the <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+
+</head>
+<body>
+
+<!--To use Js in displayings pages according to no. of person-->
+
+
+    <!--Header for index page-->
+    <!--Left with class names-->
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+
+            <ul>
+                <div class="left">
+
+                    <!--left with hamburger icon to display all pages-->
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="Menu(24dce).html">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                
+                
+                <div class="right">
+                    <!--Search icon-->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+                        
+                        <button><a href="login.html#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--Center part-->
+	<!--Backtrace path-->
+    <div class="table_book">
+        <h1>Table Booking</h1>
+        <form id="bookingForm">
+            <label>
+            Time:
+            <input type="time" id="time" required>
+            </label>
+            <br><br>
+            <label>
+            Number of people:<br>
+            <input type="number" id="people" min="1" required>
+            </label>
+            <br>
+            <button type="submit">Find Available Tables</button>
+        </form>
+    </div>
+
+
+    
+    <button><a href="#head"><i class="fas fa-arrow-up"></a></i></button>
+    
+    <!--Footer section-->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="aboutUs.html #team">Our team</a></li>
+                <li><a href="aboutUs.html #contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="feedback.html #reviews">Reviews</a></li>
+                <li><a href="feedback.html #feedback">Give your feedback</a></li>
+                <li><a href="feedback.html #faqs">FAQs</a></li>
+                
+            </ul>
+        </li>
+        
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+            
+        </li>
+
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+
+        </li>
+        
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+    <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const time = document.getElementById('time').value;
+      const people = document.getElementById('people').value;
+      // encode into query params and redirect
+      window.location.href = `table_b2.html?time=${encodeURIComponent(time)}&people=${encodeURIComponent(people)}`;
+    });
+  </script>
+  
+  <!-- Login protection script - requires login to access this page -->
+  <script src="loginProtection.js"></script>
+  
+  <!-- Login check script - shows History icon after login -->
+  <script src="loginCheck.js"></script>
+  
+  <!-- Back to top button script -->
+  <script src="backToTop.js"></script>
+  
+  <!-- Cart management script for nav badge (optional) -->
+  <script src="cartManager.js"></script>
+  
+  <!-- Search script: enables Enter to go to results -->
+  <script src="search.js"></script>
+
+</body>
+</html>

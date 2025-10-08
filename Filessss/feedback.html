@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">        
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load Font Awesome (add in the <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    
+
+</head>
+<body>  
+    <!--Header for index page-->
+     
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+
+            <ul>
+                <div class="left">
+
+                    <!--left with hamburger icon to display all pages-->
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="Menu(24dce).html">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                
+                
+                <div class="right">
+                    <!--Search icon-->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+                        
+                        <button><a href="login.html#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--Center part-->
+    <div>
+		<div id="reviews">
+			<h2 align="center"><b><i>Reviews</b></i></h2>
+			<hr align="center" width="50%">
+			
+			<div>
+				<h4>John D. 
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+				</h4>
+				<p>"Absolutely loved the cozy atmosphere and the coffee was out of this world!"</p>
+			</div>
+
+			<div>
+				<h4>Priya S.
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+				</h4>
+				<p>"A perfect place to unwind. The pastries are fresh and delicious."</p>
+			</div>
+
+			<div>
+				<h4>Michael R.
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+					<i class="fas fa-star" ></i>
+				</h4>
+				<p>"Friendly staff and exceptional service. Highly recommend to all coffee lovers!"</p>
+			</div>
+		
+		</div>
+		
+		<div id="feedback">
+			<h2 align="center"><b><i>Feedback</b></i></h2>
+			<hr align="center" width="50%">
+			<h3>We would love to hear from you</h3>
+			
+			<form>
+				<label for="email">Email: </label>
+				<input type="email" id="email" name="email" placeholder="enter your email"><br><br>
+				
+				<label for="message">Your Feedback:</label>
+				<input type="text" id="message" name="message" placeholder="write your feedback here"></input><br><br>
+				<button type="submit">Send</button>
+			</form>
+		
+		</div>
+		
+		<div id="faqs">
+			<h2 align="center"><b><i>FAQs</b></i></h2>
+			<hr align="center" width="50%">
+			
+            <div class="faq">
+                <p class="faq-qs">&#9654;  <strong>Q1. What are the opening hours of the cafe?</strong></p>		<!--&#9660 is for rop down arrow icon-->
+                <p class="faq-ans">The opening hours are: 8:00 a.m. to 8:00 p.m. and till 10:00 p.m. on weekends.</p><br>
+            </div>
+			
+            <div class="faq">
+                <p class="faq-qs">&#9654;  <strong>Q2. Do we have access to free wifi?</strong></p>		
+                <p class="faq-ans">Yes! we offer free wifi to our customers</p><br>
+            </div>
+
+            <div class="faq">
+				<p class="faq-qs">&#9654;  <strong>Q3. Can we bring our own snacks?</strong></p>		
+				<p class="faq-ans">We kindly ask that guests enjoy the wide variety of fresh snacks and treats we offer in our cafe. This helps us maintain the cozy atmosphere and support our kitchen team. Thank you for understanding!</p>
+				<br>
+			</div>
+
+			<div class="faq">
+				<p class="faq-qs">&#9654;  <strong>Q4. Can we have our own customized order?</strong></p>		
+				<p class="faq-ans">Absoloutely! we do provide customization in beverages. Please do check it out!</p><br><br><br>
+			</div>
+			
+			
+			<form>
+				<label for="Qs"><b>Have any Queries?</b></label>
+				<p>Let our team handle it, while you enjoy your beverage</p>
+				<input type="text" id="Qs" name="Qs" placeholder="Leave your queries here"></input><br><br><br>
+                <submit type="submit" value="Submit">
+                <button type="submit">Submit</button>
+			</form>
+				
+		</div>
+		
+		
+		
+		
+    </div>
+
+
+    <button><a href="#head"><i class="fas fa-arrow-up"></a></i></button>
+    <!--Footer section-->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="aboutUs.html #team">Our team</a></li>
+                <li><a href="aboutUs.html #contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#feedback">Give your feedback</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                
+            </ul>
+        </li>
+        
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+            
+        </li>
+
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+
+        </li>
+        
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+    
+
+<script>
+    document.querySelectorAll(".faq-qs").forEach(element => {
+    element.addEventListener("click", () => {
+        const ans= element.nextElementSibling;
+
+        ans.style.display = ans.style.display === "block" ? "none" : "block";
+
+    });
+});
+
+// Your JavaScript is running before the DOM is fully loaded, so the elements may not exist yet when the script runs. 
+// This is because you are including <script src="faq.js"/script>in the <head>.
+
+// To fix this, either:
+
+// Move your  tag in your HTML.
+// OR
+// Wrap your JavaScript code in an event listener that waits for the DOM to be fully loaded:
+// document.addEventListener("DOMContentLoaded", function() {
+//     document.querySelectorAll(".faq-qs").forEach(element => {
+//         element.addEventListener("click", () => {
+//             const ans= element.nextElementSibling;
+
+//             ans.style.display = ans.style.display === "block" ? "none" : "block";
+
+//         });
+//     });
+// });
+// This ensures that the script runs only after the entire document has been loaded,
+// so all elements are available for manipulation.
+</script>
+
+<!-- Login check script - shows History icon after login -->
+<script src="loginCheck.js"></script>
+
+<!-- Back to top button script -->
+<script src="backToTop.js"></script>
+</body>
+</html>
+
+

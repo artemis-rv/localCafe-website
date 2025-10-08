@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load Font Awesome (add in the <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+    <link rel="stylesheet" href="common.css">
+    
+
+</head> 
+<body>
+    <!--Header for index page-->    
+    
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+
+            <ul>
+                <div class="left">
+
+                    <!--left with hamburger icon to display all pages-->
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="Menu(24dce).html">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                
+                
+                <div class="right">
+                    <!--Search icon-->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="#Login">Login</a></button>&nbsp;&nbsp;
+                        <button><a href="#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--Center part-->    <!--Used Single Page application(SPA)-->
+	<!--left with profile page(after successfully logged in,- avatar display)-->
+	
+
+    <div id="Login">
+		<h2>Login</h2>
+        <div id="login-message" style="color: red;"></div>
+		<form id="login" action="login.php" method="post" name="loginn">
+            <section>
+                <label>Username</label><br>
+                <input id="username" type="text" placeholder="Username" name="UserLogin">
+            </section>
+            <section>
+                <label>Password</label><br>
+                <input id="password" type="password" placeholder="Password" name="passLogin">
+            </section>
+            <p><a href="forgotPaswd.html #part1">forgot password?</a></p>
+            <p><a href="#Register">New user?</a></p>
+            <section>
+                <button type="submit">Login</button>
+            </section>
+        </form>
+    </div>
+	
+	<div id="Register" name="REGISTER">
+		<h2>Register</h2>
+        <form id="registerForm" action="register.php" method="post" onsubmit="return validateRegister();">
+            <section>
+                <label>Username</label><br>
+                <input id='registerName' name="username" type="text" placeholder="Username">
+            </section>
+            <section>
+                <label>Email</label><br>
+                <input id='registerEmail' name="email" type="email" placeholder="E-Mail">
+            </section>
+            <section>
+                <label>Phone number</label><br>
+                <input id='registerPhone' name="phone" type="text" placeholder="Phone number">
+            </section>
+            <section>
+                <label>Password</label><br>
+                <input id='registerPassword' name="password" type="password" placeholder="Password">
+            </section>
+            <section>
+                <label>Confirm Password</label><br>
+                <input id='registerConfirm' name="confirm_password" type="password" placeholder="Confirm Password">
+            </section>
+            <section>
+                <button type="submit">Sign up</button>
+            </section>
+        </form>
+        <p><a href="#Login">Already registered?</a></p>
+    </div>
+        
+
+
+    
+    <button><a href="#head"><i class="fas fa-arrow-up"></a></i></button>
+    
+    <!--Footer section-->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="aboutUs.html #team">Our team</a></li>
+                <li><a href="aboutUs.html #contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="feedback.html #reviews">Reviews</a></li>
+                <li><a href="feedback.html #feedback">Give your feedback</a></li>
+                <li><a href="feedback.html #faqs">FAQs</a></li>
+                
+            </ul>
+        </li>
+        
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+            
+        </li>
+
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+
+        </li>
+        
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+    
+
+    <script src="login.js"></script>
+    
+    <!-- Back to top button script -->
+    <script src="backToTop.js"></script>
+</body>
+</html>

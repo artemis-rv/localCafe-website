@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Reservation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .reservation-card{
+      background-color: #f5e6ca;
+      padding: 2rem;
+      width: 50%;
+      margin: 3rem auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(93, 64, 55, 0.2);
+      text-align: center;
+    }
+    .reservation-card h1{
+      font-family: 'Dancing Script', cursive;
+      color: #a94438;
+      font-size: 2.2rem;
+      margin-top: 0;
+    }
+    .reservation-card p{ color:#5D4037; }
+    .reservation-actions{ margin-top: 1.5rem; display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; }
+    .reservation-actions button{ background-color:#a94438; color:#fff7ed; border:none; padding:0.6rem 1.2rem; border-radius:8px; font-weight:bold; cursor:pointer; }
+    .reservation-actions button:hover{ background-color:#5D4037; }
+  </style>
+</head>
+<body>
+  <header class="navigation">
+    <h1 align="center">B&B</h1>
+    <h2 align="center">Brew & Beyond</h2>
+    <nav>
+      <ul>
+        <div class="left">
+          <li><a href="index(24dce).html">Home</a></li>
+          <li><a href="aboutUs.html">About us</a></li>
+          <li><a href="Menu(24dce).html">Menu</a></li>
+          <li class="dropdown">Order ▾
+            <ul class="dropdown-menu">
+              <li><a href="order.html">Place order</a></li>
+              <li><a href="table_book.html">Book a table</a></li>
+            </ul>
+          </li>
+          <li><a href="subs.html">Subscription</a></li>
+        </div>
+        <div class="right">
+          <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search...">
+          </div>
+          <div class="login">
+            <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+            <button><a href="login.html#Register">Register</a></button>
+          </div>
+          <div class="cart">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <div class="history dropdown">
+            <i class="fas fa-clock"></i>
+            <ul class="dropdown-menu">
+              <li><a href="review(n buy).html #order_main">Past orders</a></li>
+              <li><a href="myreservation.html">My reservations</a></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="reservation-card">
+    <h1>My Reservation</h1>
+    <div id="reservationDetails"></div>
+    <div class="reservation-actions">
+      <button onclick="window.location.href='index(24dce).html'">Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    const myReservation = JSON.parse(localStorage.getItem('myReservation'));
+    const reservedFlags = JSON.parse(localStorage.getItem('reservedFlags')) || {};
+
+    const container = document.getElementById('reservationDetails');
+
+    if (!myReservation) {
+      container.innerHTML = '<p>You have no active reservations.</p>';
+    } else {
+      container.innerHTML = `
+        <p>You have reserved <strong>Table ${myReservation.tableId}</strong></p>
+        <p>For <strong>${myReservation.people}</strong> people at <strong>${myReservation.time}</strong></p>
+        <div class="reservation-actions">
+          <button onclick="cancelReservation()">Cancel Reservation</button>
+        </div>
+      `;
+    }
+
+    function cancelReservation() {
+      // Unset flag
+      reservedFlags[myReservation.tableId] = 0;
+      localStorage.setItem('reservedFlags', JSON.stringify(reservedFlags));
+
+      // Clear user's reservation
+      localStorage.removeItem('myReservation');
+
+      alert('Reservation cancelled.');
+      window.location.href = 'index(24dce).html';
+    }
+  </script>
+  
+  <!-- Login check: ensure clock icon shows only after login -->
+  <script src="loginCheck.js"></script>
+  <!-- Back to top (optional) -->
+  <script src="backToTop.js"></script>
+  <!-- Cart badge (optional) -->
+  <script src="cartManager.js"></script>
+</body>
+</html>
+  

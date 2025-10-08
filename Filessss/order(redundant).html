@@ -1,0 +1,649 @@
+<!-- Order Page (order.html) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order</title>
+  <!-- Load Font Awesome (add in the <head>) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="common.css">
+
+</head>
+
+<body>
+  <!--Header for index page-->
+  <!--Left with class names-->
+  <!--If user not registered/logged in, then before order to login page(LEFT)-->
+  <header class="navigation">
+    <h1 align="center">B&B</h1>
+    <h2 align="center">Brew & Beyond</h2>
+    <nav>
+
+      <ul>
+        <div class="left">
+
+          <!--left with hamburger icon to display all pages-->
+          <li><a href="index(24dce).html">Home</a></li>
+          <li><a href="aboutUs.html">About us</a></li>
+          <li><a href="Menu(24dce).html">Menu</a></li>
+          <li class="dropdown">Order ▾
+            <ul class="dropdown-menu">
+              <li><a href="#">Place order</a></li>
+              <li><a href="table_book.html">Book a table</a></li>
+            </ul>
+          </li>
+          <li><a href="subs.html">Subscription</a></li>
+        </div>
+
+
+
+                <div class="right">
+          <!--Search icon-->
+          <div class="search-container">
+            <i class="fas fa-search"></i> <!--Font awesome icon library-->
+            <input type="text" placeholder="Search...">
+          </div>
+
+          <div class="login">
+            <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+
+            <button><a href="login.html#Register">Register</a></button>
+          </div>
+
+                    <div class="cart">
+
+            <!--Symbol for cart-->
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+
+
+        </div>
+
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <!--Center part-->
+
+  <div class="bar">
+    <h4><a href="#tea">Tea</a></h4>
+    <h4><a href="#coffee">Coffee</a></h4>
+    <h4><a href="#refresher">Refreshers</a></h4>
+    <h4><a href="#smoothies">Smoothies</a></h4>
+
+    <h4><a href="#cookies">Cookies</a></h4>
+    <h4><a href="#pancakes">Pancakes</a></h4>
+    <h4><a href="#sandwiches">Sandwiches</a></h4>
+    <h4><a href="#crossiants">Croissants</a></h4>
+
+    <h4><a href="#desserts">Desserts</a></h4>
+  </div>
+
+  <main class="order-section">
+    <!-- Left: Menu Items -->
+    <section class="menu-items">
+      <h2>Order Your Favorites</h2>
+
+      <h3 id="drinks">Drinks</h3>
+      <div class="menu-category">
+        <div class="menu-category menu-category-flex">
+
+          <h3 id="tea">Tea</h3>
+          <img src="../Images/coffeee.jpg">
+        </div>
+        <div class="item">
+
+          <span>Hot Tea</span>
+          <span>₹45</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Iced Tea</span>
+          <span>₹110</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Green Tea</span>
+          <span>₹95</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3 id="coffee">Coffee</h3>
+        <div class="item">
+
+          <span>Espresso</span>
+          <span>₹105</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Latte</span>
+          <span>₹120</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Americano</span>
+          <span>₹95</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Cappucino</span>
+          <span>₹120</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Mocha</span>
+          <span>₹105</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3 id="refresher">Refresher</h3>
+        <div class="item">
+
+          <span>Strawberry Lemonade Refresher</span>
+          <span>₹125</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Mango Passionfruit Refresher</span>
+          <span>₹145</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Mint Kiwi Refresher</span>
+          <span>₹145</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Peach Refresher</span>
+          <span>₹145</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3 id="smoothies">Smoothies</h3>
+        <div class="item">
+
+          <span>Pina Colada Smoothie</span>
+          <span>₹95</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Mango Tango Smoothie</span>
+          <span>₹120</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Berry Blast Smoothie</span>
+          <span>₹120</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Strawberry Banana Smoothie</span>
+          <span>₹120</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <br>
+      <h3 id="snacks">Breakfast & Snacks</h3>
+
+      <div class="menu-category">
+        <h3 id="sandwiches">Sandwiches</h3>
+        <div class="item">
+          <span>Veggie Sandwich</span>
+          <span>₹249</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Cheese Jam Sandwich</span>
+          <span>₹239</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Cheese Corn Sandwich</span>
+          <span>₹259</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>B&B special Sandwich</span>
+          <span>₹279</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3 id="pancakes">Pancakes</h3>
+        <div class="item">
+          <span>Nutella Pancakes</span>
+          <span>₹115</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Honey Glazed Pancakes</span>
+          <span>₹169</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Blueberry Pancakes</span>
+          <span>₹175</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Red Velvet Pancakes</span>
+          <span>₹175</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+
+
+      <div class="menu-category">
+        <h3 id="crossiants">Crossiants</h3>
+        <div class="item">
+          <span>Chocolate Croissant</span>
+          <span>₹255</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Vanilla Croissant</span>
+          <span>₹255</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Almond Croissant</span>
+          <span>₹265</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>B&B special Croissant</span>
+          <span>₹285</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3 id="cookies">Cookies</h3>
+        <div class="item">
+          <span>Chocolate Chip Cookies</span>
+          <span>₹150</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Oatmeal Raisin Cookies</span>
+          <span>₹150</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Peanut Butter Cookies</span>
+          <span>₹150</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3 id="desserts">Desserts</h3>
+        <div class="item">
+          <span>Chocolate Lava Cake</span>
+          <span>₹388</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Chocolate Mousse</span>
+          <span>₹349</span>
+          <button>Add to Cart</button>
+        </div>
+        <div class="item">
+          <span>Blueberry Cheesecake</span>
+          <span>₹359</span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: Cart Summary -->
+    <aside class="cart-box">
+      <h2 align="center">Your Cart</h2>
+      <div class="cart-items">
+      </div>
+
+      <div>
+        <button class="checkout"><a href="review(n buy).html #order_main">Proceed to review</a></button>
+      </div>
+    </aside>
+  </main>
+
+  <!--Footer section-->
+  <footer>
+    <li>About us
+      <ul>
+        <li><a href="aboutUs.html #team">Our team</a></li>
+        <li><a href="aboutUs.html #contact">Contact us</a></li>
+      </ul>
+    </li>
+
+    <li>Reviews
+      <ul>
+        <li><a href="feedback.html #reviews">Reviews</a></li>
+        <li><a href="feedback.html #feedback">Give your feedback</a></li>
+        <li><a href="feedback.html #faqs">FAQs</a></li>
+
+      </ul>
+    </li>
+
+
+    <li>Our product
+      <ul>
+        <li><a href="facts.html">Stories and facts</a></li>
+      </ul>
+
+    </li>
+
+
+    <li>Subscription
+      <ul>
+        <li><a href="subs.html">Subscription and membership</a></li>
+      </ul>
+
+    </li>
+
+  </footer>
+  <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+  <script>
+
+
+
+    let cartITEMS = [];
+    function eachCartItem(n, p, q, t) {
+      this.name = n;
+      this.price = p;
+      this.qty = q;
+      this.total = t;
+    }
+    let cart_object1 = new eachCartItem();
+    let qty = 1; // Default quantity for each item
+    // Attach event listeners to all Add to Cart buttons
+    document.querySelectorAll('.item button').forEach(button => {
+      button.addEventListener('click', function () {
+        // Get the parent .item div
+        const itemDiv = button.closest('.item');
+        // Get item name and price
+        const name = itemDiv.querySelector('span:first-child').textContent;
+        const price = itemDiv.querySelector('span:nth-child(2)').textContent;
+
+
+
+        // Check if item already exists in cart
+        const cartItems = document.querySelector('.cart-items');
+        let existingItem = Array.from(cartItems.querySelectorAll('.cart-item')).find(item => {
+          return item.querySelector('.item-name').textContent === name;
+        });
+
+        // Extract numeric price
+        const priceValue = parseFloat(price.replace(/[^\d.]/g, ''));
+        let qtyElem;
+        let totalElem;
+        let qty;
+        if (existingItem) {
+          // Update quantity and total price
+          qtyElem = existingItem.querySelector('.item-qty');
+          totalElem = existingItem.querySelector('.item-total');
+          qty = parseInt(qtyElem.textContent, 10) + 1;
+          qtyElem.textContent = qty;
+          totalElem.textContent = '₹' + (qty * priceValue);
+
+          /*Adding new code*/
+
+          cartITEMS.forEach((obj)=>{
+
+            if(document.querySelector('.item-name').textContent == obj.name){
+              
+              cart_object1.qty = qty;
+              cart_object1.total = qty * priceValue;
+              /*----------------------------------------*/
+              
+              // cart_object1 = new eachCartItem();
+              console.log(cartITEMS);
+            }
+            else{console.log("Does not exist");}
+          
+        })
+
+        } else {
+          // Create cart item element
+          const div = document.createElement('div');
+          div.className = 'cart-item';
+          div.innerHTML = `
+          <span class="item-name"><b><style="font-size: 1.4rem;">${name}</style></b></span>
+          <span> x <span class="item-qty">1</span></span>
+          <span class="item-total">${price}</span>
+          <button class="subtract-item" aria-label="Decrease quantity" title="Decrease quantity">-</button>
+          <button class="remove-item" aria-label="Remove item" title="Remove item">Remove</button>
+            `;
+          cartItems.appendChild(div);
+          /*Adding new code*/
+          cart_object1.name = name;
+          cart_object1.price = price;
+          cart_object1.qty=1;
+          cart_object1.total=price;
+          cartITEMS.push(cart_object1);
+          /*----------------------------------------*/
+
+
+        }
+
+        /*Adding new code*/
+        // cart_object1.qty = qty;
+        // cart_object1.total = qty * priceValue;
+
+        // cartITEMS.push(cart_object1);
+        console.log(cartITEMS);
+        /*----------------------------------------*/
+
+
+
+        // Move the "proceed to review" button to the bottom of the cart box
+        const proceedBtn = document.querySelector('.checkout');
+        if (proceedBtn) {
+          document.querySelector('.cart-box').appendChild(proceedBtn);
+        }
+
+        // Show success toast
+        showAddToCartToast();
+      });
+    });
+
+    // Attach event listeners to all subtract and remove buttons
+    document.querySelectorAll('.cart-items').forEach(cartItems => {
+      cartItems.addEventListener('click', function (event) {
+        if (event.target.classList.contains('subtract-item')) {
+          const item = event.target.closest('.cart-item');
+          let qtyElem = item.querySelector('.item-qty');
+          let totalElem = item.querySelector('.item-total');
+          let qty = parseInt(qtyElem.textContent, 10) - 1;
+          if (qty <= 0) {
+            item.remove(); // Remove item if quantity is zero
+          } else {
+            qtyElem.textContent = qty;
+            const priceValue = parseFloat(totalElem.textContent.replace(/[^\d.]/g, '')) / (qty + 1);
+            totalElem.textContent = '₹' + (qty * priceValue);
+          }
+        } else if (event.target.classList.contains('remove-item')) {
+          event.target.closest('.cart-item').remove(); // Remove the cart item
+        }
+      });
+    });
+
+    // Prevent navigating to review page when cart is empty, show a message instead
+    const checkoutButton = document.querySelector('.checkout');
+    if (checkoutButton) {
+      checkoutButton.addEventListener('click', function (event) {
+        const hasCartItems = document.querySelector('.cart-items .cart-item') !== null;
+        if (!hasCartItems) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          let messageElem = document.querySelector('.cart-empty-message');
+          if (!messageElem) {
+            messageElem = document.createElement('div');
+            messageElem.className = 'cart-empty-message';
+            messageElem.textContent = 'Your cart is empty. Please add items to proceed.';
+
+            const cartBox = document.querySelector('.cart-box');
+            const checkoutContainer = checkoutButton.parentElement;
+            if (cartBox) {
+              if (checkoutContainer && checkoutContainer.parentElement === cartBox) {
+                cartBox.insertBefore(messageElem, checkoutContainer);
+              } else {
+                cartBox.appendChild(messageElem);
+                cartBox.appendChild(checkoutButton);
+
+              }
+            }
+          } else {
+            messageElem.style.display = 'block';
+
+          }
+
+          // Auto-hide message after a short delay
+          setTimeout(() => {
+            const existing = document.querySelector('.cart-empty-message');
+            if (existing) existing.style.display = 'none';
+          }, 3000);
+        }
+      });
+    }
+
+    // When an item is added to the cart, remove the empty-cart message if it exists
+    document.querySelectorAll('.item button').forEach(button => {
+      button.addEventListener('click', function () {
+        const msg = document.querySelector('.cart-empty-message');
+        if (msg) msg.remove();
+      });
+    });
+
+    // Toast helper for "Item added to cart successfully"
+    function showAddToCartToast() {
+      // If an existing toast is visible, remove it first
+      const existing = document.querySelector('.toast');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      toast.innerHTML = `
+    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+    <span>Item added to cart successfully</span>
+  `;
+      document.body.appendChild(toast);
+
+      // Auto-hide after 3 seconds with slide-out animation
+      setTimeout(() => {
+        toast.classList.add('toast-hide');
+        toast.addEventListener('animationend', () => toast.remove(), { once: true });
+      }, 3000);
+
+      // Optional: allow click to dismiss immediately
+      toast.addEventListener('click', () => {
+        toast.classList.add('toast-hide');
+        toast.addEventListener('animationend', () => toast.remove(), { once: true });
+      });
+    }
+
+  </script>
+
+  <style>
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      /* border-bottom: 1px solid #eee; */
+    }
+
+    .cart-empty-message {
+      color: #b00020;
+      font-size: 0.9rem;
+      margin: 8px 0;
+    }
+
+    /* Cart action button styles moved to common.css for consistency */
+    /* Toast styles */
+    .toast {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f0fff4;
+      /* green-50 */
+      color: #166534;
+      /* green-800 */
+      border: 1px solid #86efac;
+      /* green-300 */
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      z-index: 2000;
+      animation: toast-slide-in 250ms ease-out forwards;
+    }
+
+    .toast i {
+      font-size: 18px;
+      color: #16a34a;
+      /* green-600 */
+    }
+
+    .toast-hide {
+      animation: toast-slide-out 200ms ease-in forwards;
+    }
+
+    @keyframes toast-slide-in {
+      from {
+        top: -100px;
+        opacity: 0;
+      }
+
+      to {
+        top: 16px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes toast-slide-out {
+      from {
+        top: 16px;
+        opacity: 1;
+      }
+
+      to {
+        top: -100px;
+        opacity: 0;
+      }
+    }
+  </style>
+</body>
+
+</html>

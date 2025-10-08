@@ -1,0 +1,1366 @@
+body{
+	background-color: #E4D5B4;			/*latte cream*/
+	color: #5D4037;						/*chocolate brown for text*/
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.search-container .fa-search{
+    color: #5D4037;
+    position: absolute;
+    left: 0.5em;
+    top: 0.4em;
+    pointer-events: none; /* Prevents the icon from blocking input */
+    
+}
+.search-container{
+    position: relative;
+    display: inline-block;
+    margin-left: 1.25rem;
+    margin-bottom: 0.5em;
+    margin-top: 0.4rem; /* lowered slightly below baseline */
+}
+
+.search-container input[type="text"]{
+    width: 8.7rem;
+    padding-left: 2.3em;
+    border: 1px solid #8a342a;
+    border-radius: 0.9em;
+    height: 1.7em;
+    background-color: #fff7ed;
+    color: #5D4037;
+    /* font-size: 1rem; */
+}
+/*Header formattings*/
+
+
+header{
+	
+	color: #F5F0EB;
+	
+	height: 5.625rem;
+	flex-direction: column;				
+	/* To stack The name on top in header  */
+	
+	
+}
+
+.navigation h1{
+	
+	font-size: 3em;
+	font-family: 'Book Antiqua';
+	margin-bottom: 0.006rem;
+	margin-top: 0.006rem;
+	background: linear-gradient(90deg, #ff7e5f,#c71212, #E4D5B4, #c5d308f3);
+	background-size: 600% 600%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: flow 10s ease infinite;
+}
+
+@keyframes flow{
+	0%{
+		background-position: 0% 50%;					/*Place the background image at the right side horizontally (0%).Keep the background vertically centered (50%).*/
+														/*0 means top or left, 50 means center, and 100 means bottom or right*/
+																
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0% 50%;
+	}
+}
+
+.navigation h2{
+	
+	margin-top: 0.1em;
+	font-size: 1.3rem;
+	margin-bottom: 0.006rem;
+	font-family: 'Book Antiqua';
+	
+}
+
+
+header ul{
+	display: flex;
+	padding: 0;
+	justify-content: space-between;
+	margin: 0.438rem 0 0 0.625rem;
+	list-style: none;
+}
+
+/* Align right-side header items neatly */
+.right{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* padding-bottom: 1em; */
+    top: 1em;
+}
+
+.left{
+	justify-content: space-between;
+	display: flex;
+	padding-left: 0%;
+	
+	
+}
+
+
+.login{
+	margin-left: 1.25rem;
+	display: inline-block;
+	
+}
+
+.cart{
+	margin-left: 1.25rem;
+	display: inline-block;
+	
+}
+
+/* History icon is hidden by default; shown after login via JS */
+.history{
+    display: none;
+    margin-left: 1.25rem;
+}
+.history i{
+    color: #F5F0EB;
+}
+
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	padding: 2.2rem 1rem;
+	background-color: #5D4037;
+    
+    /* position: sticky;
+    top: 0;
+    z-index: 1000; */
+}
+
+
+
+.dropdown-menu {
+	position: absolute;
+    top: 2.2rem;
+    left: 0;
+	background-color: #5D4037;
+	border-radius: 0.375rem;
+	box-shadow: 0 0.5rem 1.25rem rgb(65, 25, 0);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: all 0.3s ease;
+	min-width: 11.25rem;
+	z-index: 99;
+	display: grid;
+} 
+
+.dropdown:hover .dropdown-menu {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	display: grid;
+}
+
+/* Ensure dropdowns are positioned relative to their trigger */
+.dropdown{ position: relative; }
+
+/* Position the clock (history) dropdown directly below and right-aligned */
+.history.dropdown .dropdown-menu{
+    left: auto;
+    right: 0;
+    top: 1.0rem;
+}
+
+.dropdown-menu li a {
+	display: block;
+	padding: 0.75rem 1.2rem;
+	color: #fff;
+	font-size: 0.9rem;
+	transition: background 0.2s ease;
+	white-space: nowrap;
+	
+}
+
+
+header a{
+	color: #F5F0EB;
+	transition: color 0.3s ease;
+	text-decoration: none;
+	
+}
+
+
+header ul li{
+	position: relative;
+	margin: 0 0.938rem;
+}
+
+
+header a:hover{
+	
+	color: orange;
+}
+
+.login button, #addUserBtn{
+	padding: 0.5em 0.5em;
+	border-radius: 0.6em;
+	justify-content: space-between;
+	background-color: #a94438;
+    color: #fff;
+}
+
+.login button a, #addUserBtn:hover{
+	color: #E4D5B4;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+
+/*button formattings*/
+button{
+	background-color: #A0522D;
+	color: #5D4037;
+	border: none;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+/* body formattings */
+
+.about, .main_text
+{
+	margin-top: 4.7rem;
+	margin-bottom: 2.7rem;
+}
+
+.main_text h2, .about h2{					/*index page*/
+	font-size: 3.9rem;
+	/* font-family: Georgia, 'Times New Roman', Times, serif; */
+	font-family: 'Dancing Script', cursive;
+}
+
+
+#just
+{
+	font-family:  'Quicksand';
+	font-size: 4rem;
+	margin-top: 0%;
+	/* color: #a01d28; */
+	color: #a94438;
+	
+}
+
+.main_text button a, .coupon1_text button a, .coupon2_text button a{
+	text-decoration: none;
+	font-size: 2.1em;
+	color: #fff;
+	font-family: cursive;
+	
+}
+
+.main_text button:hover, .coupon1_text button:hover, .coupon2_text button:hover{
+	background-color: #b82a2a;
+}
+
+
+.main_text button, .coupon1_text button, .coupon2_text button{
+	background-color: #ca4747;
+	border-radius: 0.625rem;
+	padding: 0.625rem 1.25rem;
+	
+
+}
+
+.see_more button{
+	
+	padding: 0.625rem 1.25rem;
+	margin-bottom: 5rem;
+	border: 0.125rem solid #5D4037;
+	background-color: #E4D5B4;
+}
+
+.see_more button a{
+	text-decoration: none;
+	color: #5D4037;
+	font-size: large;
+	font-style: oblique;
+}
+
+.see_more button:hover{
+	background-color: #5D4037;
+	
+}
+
+.see_more button:hover a{			/*not button a:hover, because wanted changes on both at hover*/
+	font-style: normal;
+	color: #fff;
+}
+
+.gallery
+{
+	overflow: hidden;		/*hides elements moving out of box */
+	position: relative;
+	height: 12.5rem;
+	background: #E4D5B4;
+	height: 18.75rem;
+	width: 100%;
+	
+	
+}
+
+.gallery-slider
+{
+	display: flex;
+	animation: scroll 50s linear infinite;
+	width: calc(12.5rem*11);
+
+	/* padding-top: 0%; */
+	
+}
+.gallery img{
+	object-fit: cover;
+	margin: 1.875rem;
+	width: 18.75rem;
+	height: 300%;
+    border-radius: 1rem;
+
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);				/*Move whole to left*/
+  }
+}
+
+
+
+.coupon1, .coupon2{
+	display: flex;
+	margin-bottom: 4rem;
+	padding: 0 0;
+	background-color: #5D4037;
+	
+}
+
+.coupon1 img, .coupon2 img, .about img{
+	width: 37%;
+	height: 37%;
+}
+
+.coupon1_text
+{
+	display: block;
+	margin-left: 12rem;
+	font-size: 2rem;
+	color: #E4D5B4;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.coupon1_text h3{
+	font-size: 3.3rem;
+	margin-top: 1em;
+	margin-bottom: 0.625em;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	
+}
+
+.coupon1_text button, .coupon2_text button
+{
+	background-color: #dd8f1bf3;
+}
+
+.coupon1_text button:hover, .coupon2_text button:hover
+{
+	background-color: #a56608f3;
+}
+
+.coupon2_text button{
+	margin-bottom: 0.063rem;
+	background-color: #801313;
+
+}
+
+.coupon2_text button:hover{
+	
+	background-color: #ce1818;
+
+}
+
+.coupon1
+{
+	margin-bottom: 5em;
+}
+
+.coupon2
+{
+	background-color: #bb4b29f3;
+	padding-left: 0;
+	margin-bottom: 8em;
+	
+}
+
+.coupon2_text
+{
+	margin-left: 2rem;
+	margin-right: 2rem;
+	font-size: 1.9rem;
+	display: block;
+	color: #E4D5B4;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.coupon2_text h3{
+	font-size: 2.5rem;
+	margin-top: 1.25rem;
+	margin-bottom: 0.938rem;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* about page */
+
+/* ---------------- About Us Page ---------------- */
+
+.about {
+    background-color: #f5e6ca; /* Light cozy background */
+    padding: 2rem;
+    width: 85%;
+    margin: 2rem auto;
+    border-radius: 0.938rem;
+    box-shadow: 0 4px rgba(93, 64, 55, 0.2);
+}
+
+.about h2, .about h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #a94438;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #5D4037;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about img {
+    width: 60%;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+    margin: 1rem 0;
+}
+
+.details {
+    background-color: #f5e6ca;
+    padding: 1.5rem;
+    width: 85%;
+    margin: 2rem auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2);
+    color: #5D4037;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.details p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.details i {
+    color: #a94438;
+}
+
+
+/* ---------------- Photo Gallery Page ---------------- */
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));		/*to repeat same pattern and min and max size specified*/
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 90%;
+    margin: auto;
+}
+
+
+.gallery-container img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 3px solid #a94438;
+    box-shadow: 0 6px 15px rgba(93, 64, 55, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(93, 64, 55, 0.4);
+    cursor: pointer;
+}
+
+
+
+
+
+/* stories and facts */
+
+#our_prod
+{
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 2.3rem;
+}
+
+.container1, .container2, .container3 {
+    margin: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background-color: #f5e6ca; 
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2); /* Soft brownish shadow */
+    padding: 2rem;
+}
+
+.container1 h3, .container2 h3, .container3 h3 {
+    padding-left: 0;
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+    color: #a94438; 
+}
+
+.container1 p, .container2 p, .container3 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #5D4037;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container1 img, .container2 img, .container3 img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #a94438; /* Matches warm reddish accent */
+    transition: transform 0.3s ease;
+}
+
+.container1 img:hover, .container2 img:hover, .container3 img:hover {
+    transform: scale(1.05); /* Gentle zoom on hover */
+}
+
+.container2 {
+    flex-direction: row-reverse; /* For alternate layout */
+}
+
+hr {
+    width: 20rem;
+    height: 3px;
+    background-color: #a94438;
+    border: none;
+    border-radius: 10px;
+    margin: 2rem auto;
+}
+
+
+
+
+
+/* feedback formattings */
+
+/* ---------------- Feedback Page Sections ---------------- */
+
+#reviews, #feedback, #faqs {
+    background-color: #f5e6ca; /* Warm creamy background */
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2);
+}
+
+#reviews h2, #feedback h2, #faqs h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #a94438;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+#reviews h4, #reviews p {
+    color: #5D4037;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#feedback h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5D4037;
+}
+
+#faqs p {
+    color: #5D4037;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+form input[type="email"],
+form input[type="text"],
+form input[type="password"] {
+    width: 90%;
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    border: 2px solid #a94438;
+    border-radius: 8px;
+    background-color: #fff7ed;
+    color: #5D4037;
+    transition: border-color 0.3s;
+}
+
+form input[type="email"]:focus,
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: #5D4037;
+    outline: none;
+}
+
+form button {
+    background-color: #a94438;
+    color: #f5e6ca;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #5D4037;
+}
+
+hr {
+    width: 20rem;
+    height: 3px;
+    background-color: #a94438;
+    border: none;
+    border-radius: 10px;
+    margin: 1rem auto 2rem auto;
+}
+
+.faq-qs{
+    background-color: #a94438;
+    border-radius: 0.4em;
+    width: 30rem;
+    margin-left: 3em;
+    height: 2.3rem;
+    padding-left: 1.2em;
+    
+    padding-top: 1em;
+    padding-bottom: 0.1em;
+    color: #f5e6ca !important;
+    font-family:cursive;
+    font-weight: 100;
+    
+}
+
+.faq-ans{
+    margin-left: 4em;
+    width: 30rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: none; /* Initially hidden */
+}
+
+
+
+
+
+/* subscription page */
+
+/* ---------------- Subscription Plans ---------------- */
+
+.subscriptions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    background-color: #f5e6ca;
+}
+
+.subscriptions div {
+    background-color: #fff7ed;
+    border: 2px solid #a94438;
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 250px;
+    box-shadow: 0 6px 20px rgba(93, 64, 55, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscriptions div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(93, 64, 55, 0.4);
+}
+
+.subscriptions h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #a94438;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.subscriptions p {
+    font-size: 1.1rem;
+    color: #5D4037;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.subscriptions ul {
+    list-style: none;
+    padding: 0;
+    color: #5D4037;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.subscriptions ul li::before {
+    content: "☕ ";
+}
+
+.stars {
+    color: #ffcc00;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.subscriptions h2{
+	font-family:cursive ;
+	font-size: 3rem;	
+}
+
+
+
+/* ---------------- Login & Register Page ---------------- */
+
+#Login, #Register, #table1, .table_book{
+    background-color: #f5e6ca; /* Warm creamy background */
+    padding: 2rem;
+    width: 40%;
+    margin: 3rem auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(93, 64, 55, 0.2);
+    text-align: center;
+}
+
+#Login h2, #Register h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #a94438;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+#Login section, #Register section {
+    margin-bottom: 1rem;
+}
+
+#Login input, #Register input {
+    width: 47%;
+    padding: 0.7rem;
+    border: 0.125rem solid #a94438;
+    border-radius: 10px;
+    background-color: #fff7ed;
+    color: #5D4037;
+    transition: border-color 0.3s;
+}
+
+#Login input:focus, #Register input:focus {
+    border-color: #5D4037;
+    outline: none;
+}
+
+#Login button, #Register button {
+    background-color: #a94438;
+    color: #f5e6ca;
+    border: none;
+    padding: 0.7rem 2rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#Login button:hover, #Register button:hover {
+    background-color: #5D4037;
+}
+
+#Login p a, #Register p a {
+    color: #5D4037;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#Login p a:hover, #Register p a:hover {
+    color: #a94438;
+}
+
+
+/* ========== Menu Page Layout & Styling ========== */
+
+.menu_upper ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: #f5e6ca;
+  border-radius: 12px;
+  list-style: none;
+}
+
+.menu_upper ul li {
+  font-family: 'Segoe UI', sans-serif;
+  color: #5D4037;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu_upper ul li:hover {
+  color: #a94438;
+}
+
+/* Layout */
+.menu_upper, .menu_content {
+  margin: 1rem;
+}
+
+.menu_upper h3, .menu_content h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #a94438;
+}
+
+/* Side Nav */
+.upper_center {
+  float: left;
+  width: 20%;
+  background-color: #fff7ed;
+  padding-bottom: 10rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(93, 64, 55, 0.15);
+}
+
+.upper_center ul {
+  list-style: none;
+  padding-left: 0.3rem;
+}
+
+.upper_center li h3 {
+  margin-bottom: 0.5rem;
+  color: #a94438;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+}
+
+.upper_center a {
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  color: #5D4037;
+  font-size: 1.2rem;
+  display: block;
+  margin: 5px 0;
+  transition: color 0.3s;
+}
+
+.upper_center a:hover {
+  color: #a94438;
+}
+
+/* Main Content */
+.middle_center {
+  float: right;
+  width: 60%;
+  background-color: #f5e6ca;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-right: 7rem;
+  margin-bottom: 2rem;
+  margin-left: 0.3rem;
+  box-shadow: 0 4px 15px rgba(93, 64, 55, 0.15);
+}
+
+.middle_center h3{
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #a94438;
+    margin-bottom: 1rem;
+    padding-left: 0.5em;
+}
+
+.middle_center h4 {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: #5D4037;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.middle_center table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+
+}
+
+.middle_center td {
+  padding: 0.6rem;
+  border-bottom: 1px solid #a94438;
+  color: #5D4037;
+  font-size: 1rem;
+  
+}
+
+.middle_center td:first-child{
+    padding-right: 2em;
+    text-align: left;
+    padding-left: 3.5rem;
+}
+
+.middle_center td:last-child {
+  text-align: right;
+  padding-right: 8rem;
+}
+
+/* Horizontal Line */
+.middle_center hr {
+  width: 17rem;
+  height: 3px;
+  background-color: #a94438;
+  border: none;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+/* Clear Floats */
+.center::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left_bottom {
+    /* display: flex; */
+    justify-content: space-between;
+    padding-top: 5rem;
+    padding-left: 2rem;
+    /* gap: 4rem; */
+    /* border-radius: 2rem; */
+}
+
+.left_bottom img {
+    /* width: 30%;
+    height: 30%; */
+    border-radius: 10px;
+    /* box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2);
+    transition: transform 0.3s ease; */
+    gap: 1rem;
+    margin-top: 4.7rem;
+}
+
+
+/* --------------------------------------- */
+/*        Order Page Styling Section       */
+/* --------------------------------------- */
+
+.bar {
+    display: flex;
+    gap: 3.5rem;
+    padding-left: 3.5rem;
+    background-color: #fc9d77b2;
+    /* position: sticky;
+    top: 0;
+    z-index: 1000; */
+}
+
+.bar h4 a {
+    font-family: 'Dancing Script', cursive;
+    color: #5D4037;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.bar h4 a:hover {
+    color: #bd5757;
+}
+
+.order-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    background-color: #f5e6ca;
+}
+
+.menu-items {
+    flex: 1 1 20rem;
+    background-color: #fff7ed;
+    padding: 2rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(93, 64, 55, 0.2);
+    max-width: 43.75rem;
+    
+}
+
+.menu-items h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.3rem;
+    color: #a94438;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.menu-category h3, .menu-items h3 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #5D4037;
+    margin: 1.2rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.menu-category-flex {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.menu-category-flex h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.menu-category-flex img {
+  width: 7em;
+  height: 7em;
+  object-fit:cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(93, 64, 55, 0.15);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5e6ca;
+    border: 0.0625rem solid #a94438;
+    padding: 0.8rem 1rem;
+    border-radius: 0.625rem;
+    margin-bottom: 1rem;
+    color: #5D4037;
+    font-size: 1rem;
+}
+
+.item span:first-child {
+    flex: 1;
+    margin-right: 3em;
+}
+
+
+
+
+
+.item button {
+    background-color: #a94438;
+    color: #fff7ed;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: 2em;
+}
+
+.item button:hover {
+    background-color: #5D4037;
+}
+
+/* ===================== Cart Action Buttons ===================== */
+/* Theme-consistent styles for '-' (subtract) and 'Remove' buttons inside cart items */
+.cart-item .subtract-item,
+.cart-item .remove-item {
+  background-color: #a94438 !important; /* primary accent */
+  color: #fff7ed;            /* light cream text */
+  border: none;
+  padding: 0.35rem 0.6rem;   /* compact inside cart rows */
+  border-radius: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+  margin-left: 0.4rem;
+}
+
+/* Hover & active states match the theme's button behavior */
+.cart-item .subtract-item:hover,
+.cart-item .remove-item:hover { background-color: #5D4037; }
+.cart-item .subtract-item:active,
+.cart-item .remove-item:active { transform: translateY(1px); }
+
+/* Destructive action gets a warmer base color to hint at removal */
+.cart-item .remove-item { background-color: #bb4b29; }
+.cart-item .remove-item:hover { background-color: #a94438; }
+
+/* Keyboard focus outline for accessibility */
+.cart-item .subtract-item:focus,
+.cart-item .remove-item:focus {
+  outline: 2px solid #dd8f1b; /* subtle warm focus ring (coupon accent) */
+  outline-offset: 2px;
+}
+/* =============================================================== */
+
+/* Cart Section */
+.cart-box {
+    flex: 1 1 17.5rem;
+    background-color: #f7ca77e5;
+    padding: 2rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(93, 64, 55, 0.2);
+    max-width: 25rem;
+    margin-bottom: auto;
+}
+
+.cart-box h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #a94438;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.cart-box ul {
+    list-style: none;
+    padding-left: 0;
+    color: #5D4037;
+    font-size: 1.05rem;
+}
+
+.cart-box p {
+    font-size: 1.2rem;
+    color: #5D4037;
+    margin-top: 1rem;
+}
+
+.checkout{
+    margin-top: 1rem;
+    background-color: #a94438;
+    color: #fff7ed;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.checkout a{
+    color: #fff7ed;
+    text-decoration: none;
+
+}
+
+.checkout:hover {
+    background-color: #5D4037;
+}
+
+#snacks, #drinks {
+    font-size: 2rem;
+}
+
+/* Forgot Password Page */
+.forgot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    background-color: #fff7ed;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.forgot-step {
+    background-color: #f5e6ca;
+    border: 1px solid #a94438;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2);
+}
+
+.forgot-step h2 {
+    text-align: center;
+    color: #a94438;
+    font-family: 'Dancing Script', cursive;
+}
+
+.forgot-step input[type="email"],
+.forgot-step input[type="tel"],
+.forgot-step input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+} 
+ 
+.forgot-step button { 
+    background-color: #a94438; 
+    color: #E4D5B4; 
+    border: none; 
+    padding: 0.6rem 1.5rem; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto 0;
+    transition: background-color 0.3s;
+}
+
+.forgot-step button:hover {
+    background-color: #5D4037;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+
+/*Footer formattings*/
+
+footer{
+	display:flex;
+	background-color: #5D4037;
+	text-decoration: none;
+	list-style-type: none;
+	color: #E4D5B4;
+	justify-content: space-between;
+	padding-left: 1em;
+	padding-top: 1em;
+	padding-right: 1em;
+}
+
+footer li a, footer li ul{
+	margin-left: 1em;
+	margin-right: 1em;
+	display:flex;
+	background-color: #5D4037;
+	text-decoration: none;
+	list-style-type: none;
+	color: #E4D5B4;
+	transition: all 0.3s;
+}
+
+footer li ul{
+	display: block;
+	margin-left: 0;
+}
+footer li a:hover{
+	
+	color: orange;
+	
+}
+#foot
+{
+	background-color: #5D4037;
+	margin-top: 0;
+	color: #E4D5B4;
+	margin-bottom: 0;
+	
+}
+
+
+/*buttons, image slider, footer*/
+
+
+
+/* Forgot password html */
+#part1, #part2, #part3, #part4{
+	display:none;
+}
+
+
+:target#part1{
+	display:block;
+}
+
+:target#part2{
+	display:block;
+}
+
+:target#part3{
+	display:block;
+}
+
+:target#part4{
+	display:block;
+}
+
+
+/* Login.html */
+#Login,#Register{
+	display:none;
+}
+
+:target#Login{
+	display: block;
+}
+
+:target#Register{
+	display: block;
+}
+
+/* review (n buy) */
+#order_main, #order2, #takeaway, #dine-in{
+    display:none;
+}
+
+:target#order_main{
+    display:block;
+}
+
+
+:target#order2{
+    display:block;
+}
+
+
+:target#takeaway{
+    display:block;
+}
+
+
+:target#dine-in{
+    display:block;
+}
+
+
+/* Subscription page */
+.subscription
+{
+	display: flex;
+}
+
+

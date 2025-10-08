@@ -1,0 +1,21 @@
+Advanced and intermediate features:
+1. Intermediate: Create a responsive wireframe using Figma 
+Advanced: Create ER diagram & REST API route plan for backend design 
+
+2. Intermediate: Create 2 additional pages (e.g., Contact, Feedback) 
+Advanced: Convert one page to use templating via JavaScript (Handlebars or 
+JS include) 
+
+3. Intermediate: Add side navigation menu (hamburger toggle) 
+Advanced: Build responsive layout using Bootstrap or Tailwind CSS 
+
+4. Intermediate: Add animation transitions to cards/buttons 
+Advanced: Implement CSS theme switcher (light/dark mode) 
+
+5. Intermediate: Add country/state select with dependent dropdowns 
+Advanced: Integrate reCAPTCHA or create a custom CAPTCHA using 
+Canvas 
+
+6. Advanced/Intermediate Extension: 
+Intermediate: Add “Remember Me” functionality with expiration 
+Advanced: Create client-side token system using JWT-like approach 

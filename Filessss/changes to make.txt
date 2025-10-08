@@ -1,0 +1,18 @@
+You must have a membership card to enjoy the premium offers
+
+1. Speciality drinks  are only available on Fridays excluding public holidays.
+
+Basic Brew:
+1.
+
+Coffee lover:
+1. free refill only at the cafe, no takeaways, 
+
+
+------------------------------------------------------------
+JSON arrays parsing:
+1. Login and registration
+2. Cart system ----------------------------- best
+3. Menu data
+4. subscription plans
+5. Review and feedback

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .search-results{ background:#f5e6ca; width:80%; margin:2rem auto; padding:1.5rem; border-radius:12px; box-shadow:0 6px 20px rgba(93,64,55,.2); }
+    .search-results h2{ font-family:'Dancing Script',cursive; color:#a94438; margin-top:0; }
+    .result-item{ background:#fff7ed; border:1px solid #a94438; border-radius:10px; padding:1rem; margin:.6rem 0; display:flex; justify-content:space-between; align-items:center; }
+    .result-item a{ color:#5D4037; text-decoration:none; font-weight:600; }
+    .result-item a:hover{ color:#a94438; }
+  </style>
+</head>
+<body>
+  <header class="navigation">
+    <h1 align="center">B&B</h1>
+    <h2 align="center">Brew & Beyond</h2>
+    <nav>
+      <ul>
+        <div class="left">
+          <li><a href="index(24dce).html">Home</a></li>
+          <li><a href="aboutUs.html">About us</a></li>
+          <li><a href="Menu(24dce).html">Menu</a></li>
+          <li class="dropdown">Order ▾
+            <ul class="dropdown-menu">
+              <li><a href="order.html">Place order</a></li>
+              <li><a href="table_book.html">Book a table</a></li>
+            </ul>
+          </li>
+          <li><a href="subs.html">Subscription</a></li>
+        </div>
+        <div class="right">
+          <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search...">
+          </div>
+          <div class="login">
+            <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+            <button><a href="login.html#Register">Register</a></button>
+          </div>
+          <div class="cart">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <div class="history dropdown">
+            <i class="fas fa-clock"></i>
+            <ul class="dropdown-menu">
+              <li><a href="review(n buy).html #order_main">Past orders</a></li>
+              <li><a href="myreservation.html">My reservations</a></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-results">
+    <h2>Search Results</h2>
+    <div id="results"></div>
+  </div>
+
+  <footer>
+    <li>About us
+      <ul>
+        <li><a href="aboutUs.html #team">Our team</a></li>
+        <li><a href="aboutUs.html #contact">Contact us</a></li>
+      </ul>
+    </li>
+    <li>Reviews
+      <ul>
+        <li><a href="feedback.html #reviews">Reviews</a></li>
+        <li><a href="feedback.html #feedback">Give your feedback</a></li>
+        <li><a href="feedback.html #faqs">FAQs</a></li>
+      </ul>
+    </li>
+    <li>Our product
+      <ul>
+        <li><a href="facts.html">Stories and facts</a></li>
+      </ul>
+    </li>
+    <li>Subscription
+      <ul>
+        <li><a href="subs.html">Subscription and membership</a></li>
+      </ul>
+    </li>
+  </footer>
+  <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+  <script src="search.js"></script>
+  <script src="loginCheck.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const q = (params.get('q')||'').toLowerCase();
+    const resultsEl = document.getElementById('results');
+    if(!q){
+      resultsEl.innerHTML = '<p>Type in the search box and press Enter.</p>';
+    } else {
+      // Basic catalog of routes and labels
+      const catalog = [
+        { label: 'Home', url: 'index(24dce).html', tags:['home','start','bnb','brew','beyond'] },
+        { label: 'Menu', url: 'Menu(24dce).html', tags:['menu','drinks','coffee','tea','food','snacks','desserts'] },
+        { label: 'Order', url: 'order.html', tags:['order','buy','cart','checkout'] },
+        { label: 'Book a Table', url: 'table_book.html', tags:['book','table','reservation','reserve'] },
+        { label: 'My Reservations', url: 'myreservation.html', tags:['reservation','my reservation','booking'] },
+        { label: 'Photos', url: 'photos.html', tags:['photos','gallery','images'] },
+        { label: 'About Us', url: 'aboutUs.html', tags:['about','team','contact'] },
+        { label: 'Facts & Stories', url: 'facts.html', tags:['facts','stories','coffee'] },
+        { label: 'Feedback', url: 'feedback.html', tags:['feedback','reviews','faqs'] },
+        { label: 'Subscriptions', url: 'subs.html', tags:['subscription','membership','plans'] },
+        { label: 'Review Purchase', url: 'review(n buy).html#order_main', tags:['review','purchase','cart'] }
+      ];
+      const matches = catalog.filter(item => {
+        return item.label.toLowerCase().includes(q) || item.tags.some(t=>t.includes(q));
+      });
+      if(matches.length === 0){
+        resultsEl.innerHTML = '<p>No results found. Try different keywords.</p>';
+      } else {
+        resultsEl.innerHTML = matches.map(m => `
+          <div class="result-item">
+            <span>${m.label}</span>
+            <a href="${m.url}">Open</a>
+          </div>
+        `).join('');
+      }
+    }
+  </script>
+</body>
+</html>
+
+

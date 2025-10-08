@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Purchase - B&B Cafe</title>
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>          
+    <!-- Header -->
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+            <ul>
+                <div class="left">
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="Menu(24dce).html">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                <div class="right">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+                        <button><a href="login.html#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="review-section">
+        <div id="order_main" class="review-container">
+            <div class="review-header">
+                <h2><i class="fas fa-receipt"></i> Order Review</h2>
+                <p class="order-summary">Review your items before proceeding to checkout</p>
+            </div>
+            
+            <div class="order-details">
+                <div class="order-table-container">
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Unit Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="order-items">
+                            <!-- Items will be populated by JavaScript -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="subtotal-row">
+                                <td colspan="3"><strong>Subtotal:</strong></td>
+                                <td id="subtotal">₹0</td>
+                                <td></td>
+                            </tr>
+                            <tr class="gst-row">
+                                <td colspan="3"><strong>GST (18%):</strong></td>
+                                <td id="gst-amount">₹0</td>
+                                <td></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td colspan="3"><strong>Grand Total:</strong></td>
+                                <td id="grand-total">₹0</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="order-actions">
+                    <button class="btn-secondary" onclick="window.history.back()">
+                        <i class="fas fa-arrow-left"></i> Back to Menu
+                    </button>
+                    <button class="btn-primary" onclick="proceedToDelivery()">
+                        <i class="fas fa-arrow-right"></i> Proceed to Delivery
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delivery Options -->
+        <div id="order2" class="delivery-options" style="display: none;">
+            <div class="delivery-header">
+                <h2><i class="fas fa-truck"></i> Choose Delivery Option</h2>
+                <p>Select how you'd like to receive your order</p>
+            </div>
+            
+            <div class="delivery-cards">
+                <div class="delivery-card" onclick="selectDelivery('takeaway')">
+                    <div class="card-icon">
+                        <i class="fas fa-bag-shopping"></i>
+                    </div>
+                    <h3>Takeaway</h3>
+                    <p>Pick up your order at our cafe</p>
+                    <div class="delivery-time">
+                        <i class="fas fa-clock"></i> Ready in 15-20 minutes
+                    </div>
+                </div>
+                
+                <div class="delivery-card" onclick="selectDelivery('dine-in')">
+                    <div class="card-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Dine-in</h3>
+                    <p>Enjoy your meal at our cafe</p>
+                    <div class="delivery-time">
+                        <i class="fas fa-clock"></i> Served immediately
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Messages -->
+        <div id="takeaway" class="success-message" style="display: none;">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Order Placed Successfully!</h2>
+                <p>Your takeaway order has been confirmed. Please collect it from our counter.</p>
+                <div class="order-details-summary">
+                    <p><strong>Order ID:</strong> <span id="order-id-takeaway"></span></p>
+                    <p><strong>Estimated Ready Time:</strong> <span id="ready-time-takeaway"></span></p>
+                </div>
+                <div class="success-actions">
+                    <button class="btn-primary" onclick="window.location.href='index(24dce).html'">
+                        <i class="fas fa-home"></i> Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="dine-in" class="success-message" style="display: none;">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Order Placed Successfully!</h2>
+                <p>Your dine-in order has been confirmed. Please wait for your table.</p>
+                <div class="order-details-summary">
+                    <p><strong>Order ID:</strong> <span id="order-id-dinein"></span></p>
+                    <p><strong>Table Number:</strong> <span id="table-number"></span></p>
+                </div>
+                <div class="success-actions">
+                    <button class="btn-secondary" onclick="window.location.href='table_book.html'">
+                        <i class="fas fa-calendar"></i> Book Another Table
+                    </button>
+                    <button class="btn-primary" onclick="window.location.href='index(24dce).html'">
+                        <i class="fas fa-home"></i> Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Footer -->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="aboutUs.html#team">Our team</a></li>
+                <li><a href="aboutUs.html#contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="feedback.html#reviews">Reviews</a></li>
+                <li><a href="feedback.html#feedback">Give your feedback</a></li>
+                <li><a href="feedback.html#faqs">FAQs</a></li>
+            </ul>
+        </li>
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+        </li>
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+        </li>
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+    <!-- Cart management script -->
+    <script src="cartManager.js"></script>
+    
+    <!-- Login check script - shows History icon after login -->
+    <script src="loginCheck.js"></script>
+    
+    <script>
+        // Global variables
+        let cartItems = [];
+        let orderId = '';
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartItems();
+            calculateTotals();
+            generateOrderId();
+        });
+
+        // Load cart items from cart manager
+        function loadCartItems() {
+            // Load items from cart manager (localStorage)
+            cartItems = cartManager.getCartItems();
+            
+            if (cartItems.length === 0) {
+                // Show empty cart message and redirect to order page
+                showEmptyCartMessage();
+                return;
+            }
+            
+            displayCartItems();
+        }
+
+        // Display cart items in the table
+        function displayCartItems() {
+            const tbody = document.getElementById('order-items');
+            tbody.innerHTML = '';
+
+            cartItems.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.className = 'order-item-row';
+                row.innerHTML = `
+                    <td class="item-name">
+                        <strong>${item.name}</strong>
+                    </td>
+                    <td class="item-price">₹${item.price}</td>
+                    <td class="item-quantity">
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="updateQuantity(${index}, -1)" title="Decrease quantity">-</button>
+                            <span class="qty-display">${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${index}, 1)" title="Increase quantity">+</button>
+                        </div>
+                    </td>
+                    <td class="item-total">₹${item.total}</td>
+                    <td class="item-actions">
+                        <button class="btn-remove" onclick="removeItem(${index})" title="Remove item">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Update item quantity
+        function updateQuantity(index, change) {
+            const item = cartItems[index];
+            const newQuantity = item.quantity + change;
+            
+            if (newQuantity <= 0) {
+                removeItem(index);
+            } else {
+                // Update using cart manager
+                cartManager.updateQuantity(item.name, newQuantity);
+                // Reload cart items from manager
+                cartItems = cartManager.getCartItems();
+                displayCartItems();
+                calculateTotals();
+            }
+        }
+
+        // Remove item from cart
+        function removeItem(index) {
+            const item = cartItems[index];
+            // Remove using cart manager
+            cartManager.removeItem(item.name);
+            // Reload cart items from manager
+            cartItems = cartManager.getCartItems();
+            displayCartItems();
+            calculateTotals();
+            
+        // Show empty cart message if no items
+        if (cartItems.length === 0) {
+            showEmptyCartMessage();
+        }
+    }
+
+    // Show empty cart message and redirect
+    function showEmptyCartMessage() {
+        const mainContent = document.querySelector('#order_main');
+        if (mainContent) {
+            mainContent.innerHTML = `
+                <div style="text-align: center; padding: 50px;">
+                    <h2 style="color: #666; margin-bottom: 20px;">Your cart is empty</h2>
+                    <p style="color: #888; margin-bottom: 30px;">Please add some items to your cart before proceeding to checkout.</p>
+                    <a href="order.html" style="background: #4c3228; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                        Go to Order Page
+                    </a>
+                </div>
+            `;
+        }
+        }
+
+        // Calculate totals including GST
+        function calculateTotals() {
+            const subtotal = cartItems.reduce((sum, item) => sum + item.total, 0);
+            const gstRate = 0.18; // 18% GST
+            const gstAmount = subtotal * gstRate;
+            const grandTotal = subtotal + gstAmount;
+
+            document.getElementById('subtotal').textContent = `₹${subtotal.toFixed(2)}`;
+            document.getElementById('gst-amount').textContent = `₹${gstAmount.toFixed(2)}`;
+            document.getElementById('grand-total').textContent = `₹${grandTotal.toFixed(2)}`;
+        }
+
+        // Generate unique order ID
+        function generateOrderId() {
+            const timestamp = Date.now();
+            const random = Math.floor(Math.random() * 1000);
+            orderId = `BB${timestamp}${random}`;
+        }
+
+        // Show empty cart message
+        function showEmptyCartMessage() {
+            const tbody = document.getElementById('order-items');
+            tbody.innerHTML = `
+                <tr class="empty-cart">
+                    <td colspan="5" class="empty-cart-message">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                        <button class="btn-primary" onclick="window.location.href='order.html'">
+                            <i class="fas fa-plus"></i> Add Items
+                        </button>
+                    </td>
+                </tr>
+            `;
+            
+            // Hide totals
+            document.querySelector('.subtotal-row').style.display = 'none';
+            document.querySelector('.gst-row').style.display = 'none';
+            document.querySelector('.total-row').style.display = 'none';
+        }
+
+        // Proceed to delivery options
+        function proceedToDelivery() {
+            if (cartItems.length === 0) {
+                showToast('Please add items to your cart before proceeding', 'error');
+                return;
+            }
+
+            document.getElementById('order_main').style.display = 'none';
+            document.getElementById('order2').style.display = 'block';
+        }
+
+        // Select delivery option
+        async function selectDelivery(type) {
+            document.getElementById('order2').style.display = 'none';
+            
+            // Build payload
+            const subtotal = cartItems.reduce((sum, item) => sum + item.total, 0);
+            const gstRate = 0.18;
+            const gstAmount = subtotal * gstRate;
+            const grandTotal = subtotal + gstAmount;
+
+            // Optional booking info only if reservation exists in localStorage
+            let booking = null;
+            try {
+                const reservationRaw = localStorage.getItem('myReservation');
+                if (reservationRaw) {
+                    const reservation = JSON.parse(reservationRaw);
+                    booking = {
+                        tableId: reservation.tableId,
+                        people: reservation.people,
+                        time: reservation.time
+                    };
+                }
+            } catch (e) {}
+
+            const payload = {
+                orderId: orderId,
+                deliveryType: type,
+                items: cartItems.map(ci => ({
+                    name: ci.name,
+                    unitPrice: ci.price,
+                    quantity: ci.quantity,
+                    total: ci.total
+                })),
+                subtotal: parseFloat(subtotal.toFixed(2)),
+                gst: parseFloat(gstAmount.toFixed(2)),
+                grandTotal: parseFloat(grandTotal.toFixed(2))
+            };
+            if (booking) {
+                payload.booking = booking;
+            }
+
+            // Persist order to backend
+            try {
+                const res = await fetch('order.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await res.json();
+                if (!result || !result.success) {
+                    showToast('Failed to save order. Please try again.', 'error');
+                }
+            } catch (err) {
+                showToast('Network error while saving order.', 'error');
+            }
+
+            // Clear the cart after order completion
+            cartManager.clearCart();
+            
+            if (type === 'takeaway') {
+                document.getElementById('takeaway').style.display = 'block';
+                document.getElementById('order-id-takeaway').textContent = orderId;
+                document.getElementById('ready-time-takeaway').textContent = getReadyTime();
+            } else {
+                document.getElementById('dine-in').style.display = 'block';
+                document.getElementById('order-id-dinein').textContent = orderId;
+                document.getElementById('table-number').textContent = getRandomTableNumber();
+            }
+        }
+
+        // Get estimated ready time for takeaway
+        function getReadyTime() {
+            const now = new Date();
+            const readyTime = new Date(now.getTime() + 20 * 60000); // 20 minutes
+            return readyTime.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+        }
+
+        // Get random table number for dine-in
+        function getRandomTableNumber() {
+            return Math.floor(Math.random() * 20) + 1;
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('toast-hide');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide scroll to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const scrollBtn = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+    </script>
+
+    <style>
+        /* Review Page Specific Styles */
+        .review-section {
+            background-color: #f5e6ca;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .review-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff7ed;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(93, 64, 55, 0.15);
+            overflow: hidden;
+        }
+
+        .review-header {
+            background: linear-gradient(135deg, #a94438, #bb4b29);
+            color: #fff7ed;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .review-header h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-header i {
+            margin-right: 0.5rem;
+        }
+
+        .order-summary {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .order-details {
+            padding: 2rem;
+        }
+
+        .order-table-container {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f5e6ca;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(93, 64, 55, 0.1);
+        }
+
+        .order-table th {
+            background-color: #a94438;
+            color: #fff7ed;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .order-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: middle;
+        }
+
+        .order-item-row:hover {
+            background-color: #f8f9fa;
+            transition: 30ms;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qty-btn {
+            background-color: #a94438;
+            color: #fff7ed;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .qty-btn:hover {
+            background-color: #5D4037;
+        }
+
+        .qty-display {
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .btn-remove {
+            background-color: #bb4b29;
+            color: #fff7ed;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-remove:hover {
+            background-color: #a94438;
+        }
+
+        .subtotal-row, .gst-row, .total-row {
+            background-color: #f5e6ca;
+        }
+
+        .total-row {
+            background-color: #a94438;
+            color: #fff7ed;
+            font-weight: bold;
+        }
+
+        .total-row td {
+            border-bottom: none;
+        }
+
+        .empty-cart-message {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .empty-cart-message i {
+            font-size: 3rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .order-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: #a94438;
+            color: #fff7ed;
+        }
+
+        .btn-primary:hover {
+            background-color: #5D4037;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #f5e6ca;
+            color: #5D4037;
+            border: 2px solid #a94438;
+        }
+
+        .btn-secondary:hover {
+            background-color: #a94438;
+            color: #fff7ed;
+        }
+
+        /* Delivery Options */
+        .delivery-options {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff7ed;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(93, 64, 55, 0.15);
+            overflow: hidden;
+        }
+
+        .delivery-header {
+            background: linear-gradient(135deg, #a94438, #bb4b29);
+            color: #fff7ed;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .delivery-header h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .delivery-cards {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            justify-content: center;
+        }
+
+        .delivery-card {
+            background-color: #fff;
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .delivery-card:hover {
+            border-color: #a94438;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(93, 64, 55, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: #a94438;
+            margin-bottom: 1rem;
+        }
+
+        .delivery-card h3 {
+            color: #5D4037;
+            margin-bottom: 0.5rem;
+        }
+
+        .delivery-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .delivery-time {
+            color: #a94438;
+            font-weight: bold;
+        }
+
+        /* Success Messages */
+        .success-message {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff7ed;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(93, 64, 55, 0.15);
+            overflow: hidden;
+        }
+
+        .success-content {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #16a34a;
+            margin-bottom: 1rem;
+        }
+
+        .success-content h2 {
+            color: #5D4037;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-content p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .order-details-summary {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .order-details-summary p {
+            margin: 0.5rem 0;
+            color: #5D4037;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #a94438;
+            color: #fff7ed;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
+            transition: all 0.3s;
+            display: none;
+        }
+
+        .scroll-top:hover {
+            background-color: #5D4037;
+            transform: translateY(-2px);
+        }
+
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            color: #333;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: toast-slide-in 0.3s ease-out;
+        }
+
+        .toast-error {
+            border-left: 4px solid #dc3545;
+        }
+
+        .toast-info {
+            border-left: 4px solid #17a2b8;
+        }
+
+        @keyframes toast-slide-in {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .delivery-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .order-actions {
+                flex-direction: column;
+            }
+
+            .success-actions {
+                flex-direction: column;
+            }
+
+            .order-table {
+                font-size: 0.9rem;
+            }
+
+            .order-table th,
+            .order-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

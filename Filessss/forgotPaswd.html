@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load Font Awesome (add in the <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+    <link rel="stylesheet" href="common.css">
+
+</head> 
+<body>
+
+<!--To use Js in displayings pages according to no. of person-->    
+
+
+    <!--Header for index page-->
+    
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+
+            <ul>
+                <div class="left">
+
+                    <!--left with hamburger icon to display all pages-->
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="Menu(24dce).html">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                
+                
+                <div class="right">
+                    <!--Search icon-->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+                        
+                        <button><a href="login.html#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--Center part-->
+    <div class="forgot-container">
+		<div id="part1" class="forgot-step">
+			<form>
+				<label for="email"><b>Email:</b></label><br>
+				<input type="email" id="email" required><br><br>
+				
+				<label for="tel"><b>Mobile Number:</b></label><br>			<!--numeric input-->
+				<input type="tel" id="tel" required><br><br>
+				
+				<button><a href="#part2">Next</a></button>
+				
+			</form>
+		</div>
+		
+		<div id="part2" class="forgot-step">			<!--OTP display in mail for MFA-->
+			<form>
+				<label for="otp"><b>OTP:</b></label><br>
+				<input type="text" id="otp" maxlength="6" placeholder="******" required>
+				<p>please check your mail for a 6-digit otp.</p>
+				
+				<button><a href="#part3">Proceed</a></button>
+				
+			</form>
+		</div>
+		
+		<div id="part3" class="forgot-step">			<!--Number display in SMS for MFA-->
+			<form>
+				<label for="otp"><b>Number displayed:</b></label><br>
+				<input type="text" id="otp" maxlength="6" placeholder="******" required>
+				<p>please enter the number sent in SMS.</p>
+				
+				<button><a href="#part4">Proceed</a></button>
+				
+			</form>
+		</div>
+		
+		<!--Js to authenticate the user and display either it matches(success) or not(failure)-->
+		
+		
+		<div id="part4" class="forgot-step">			<!--if both OTP and number matches-->
+			<div>
+				<h3>Successfully logged in!</h3>
+				<p>For privacy concerns, it is a request to change your password.</p>
+				
+				<button><a href="index(24dce).html">Back to home</a></button>			<!--button color to be red-->
+				<button><a href="setPasswd.html">Change password</a></button>		<!--change password.html is left to make-->
+				
+			</div>
+		</div>
+		
+		
+
+    </div>
+
+
+    <button><a href="#head"><i class="fas fa-arrow-up"></a></i></button>
+    <!--Footer section-->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="aboutUs.html #team">Our team</a></li>
+                <li><a href="aboutUs.html #contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="feedback.html #reviews">Reviews</a></li>
+                <li><a href="feedback.html #feedback">Give your feedback</a></li>
+                <li><a href="feedback.html #faqs">FAQs</a></li>
+                
+            </ul>
+        </li>
+        
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+            
+        </li>
+
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+
+        </li>
+        
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+    <!-- Back to top button script -->
+    <script src="backToTop.js"></script>
+
+</body>
+</html>

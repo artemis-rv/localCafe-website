@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+<html lang="en">    
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load Font Awesome (add in the <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+
+</head>
+<body>
+    <!--Header for index page-->
+        
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+
+            <ul>
+                <div class="left">
+
+                    
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="Menu(24dce).html">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                
+                
+                <div class="right">
+                    <!--Search icon-->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+                        
+                        <button><a href="login.html#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--Center part-->
+    <div>
+        <!--Centered heading-->
+		<div class="about" align="center">
+			<h2 align="center">About Us</h2>
+            <hr align="center" width="60%" id="about_us"><br><br>
+            
+            <h3 id="team" align="center">Our team</h3>
+            <hr align="center" width="20%"><br><br>
+            <img src="../Images/cafe(about).webp" alt="cutomer service"><br><br>
+            <p>We believe every cup of coffee tels a story - of warmth, connection and comfort.<br>Founded with a love for great brews and cozy spaces, 
+            we have created a <br>welcoming corner where friends meet, ideas spark, and moments are savored.<br>Our carefully curated selection of coffees, teas, and freshly baked treats is made<br>with passion and the finest ingredients.
+            <br><br><br><br><img src="../Images/cafe(about)1.webp"><br><br>
+            <br><br>Whether you’re here for a quick morning pick-me-up, a 
+            long catch-up with friends,<br>or a quiet moment to yourself, we’re here to make you feel at home. 
+            <br>Come in, take a sip, and be part of our cafe family.</p><br><br>
+		</div>
+		
+        <h2 align="center" id="contact">Contact Us</h2>
+        <hr align="center" width="20%"><br>
+		<div class="details">
+			<p><b><i class="fas fa-phone"></i> Phone:</b> 98273 64523</p>
+			<p><b><i class="fas fa-envelope"></i> Email:</b> team@bnb.com</p>
+			<p><b><i class="fas fa-location-dot"></i> Address:</b> 221B Harmony Street, Green Park, New Delhi, India — 110016</p><br><br>
+		</div>
+		
+		
+    </div>
+
+
+    
+    <!--Footer section-->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="#team">Our team</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="feedback.html #reviews">Reviews</a></li>
+                <li><a href="feedback.html #feedback">Give your feedback</a></li>
+                <li><a href="feedback.html #faqs">FAQs</a></li>
+                
+            </ul>
+        </li>
+        
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+            
+        </li>
+
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+
+        </li>
+        
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B coffee , 2025 Powered by amazon</p>
+    
+    <!-- Login check script - shows History icon after login -->
+    <script src="loginCheck.js"></script>
+    
+    <!-- Back to top button script -->
+    <script src="backToTop.js"></script>
+
+</body>
+</html>

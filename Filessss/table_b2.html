@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Tables</title>
+    
+    <!-- Load Font Awesome (add in the <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .card {
+      display: inline-block;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 8px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    }
+    .card button {
+      margin-top: 8px;
+    }
+  </style>
+
+</head>
+<body>
+
+<!--To use Js in displayings pages according to no. of person-->
+
+
+    <!--Header for index page-->
+    <!--Left with class names-->
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+
+            <ul>
+                <div class="left">
+
+                    <!--left with hamburger icon to display all pages-->
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="Menu(24dce).html">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                
+                
+                <div class="right">
+                    <!--Search icon-->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+                        
+                        <button><a href="login.html#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--Center part-->
+	<!--Backtrace path-->
+    <div>
+		<h1>Available Tables</h1>
+  <div id="cardsContainer"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const time = params.get('time');
+    const people = parseInt(params.get('people'));
+
+    // Simulate table data with status (flag)
+    let tables = [
+      { id: 'A1', seats: 2, flag: 0 },
+      { id: 'B2', seats: 4, flag: 0 },
+      { id: 'C3', seats: 6, flag: 0 },
+      { id: 'D4', seats: 4, flag: 0 }
+    ];
+
+    // Load booked flags from localStorage (mocked as shared DB)
+    const reservedFlags = JSON.parse(localStorage.getItem('reservedFlags')) || {};
+
+    // Check if user already booked a table
+    const myReservation = localStorage.getItem('myReservation');
+    if (myReservation) {
+      alert('You have already reserved a table! View it on "My Reservation" page.');
+      window.location.href = 'myreservation.html';
+    }
+
+    // Filter only available tables with exact seat count
+    const suitable = tables.filter(t => t.seats === people && reservedFlags[t.id] !== 1);
+
+    const container = document.getElementById('cardsContainer');
+    if (suitable.length === 0) {
+      container.innerHTML = '<p>No tables available for that size.</p>';
+    } else {
+      suitable.forEach(t => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <h2>Table ${t.id}</h2>
+          <p>Seats: ${t.seats}</p>
+          <button onclick="reserve('${t.id}')">Reserve</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function reserve(tableId) {
+      // Set flag for this table in localStorage (simulate DB update)
+      reservedFlags[tableId] = 1;
+      localStorage.setItem('reservedFlags', JSON.stringify(reservedFlags));
+
+      // Save user's reservation info
+      localStorage.setItem('myReservation', JSON.stringify({ tableId, people, time }));
+
+      alert(`Table ${tableId} reserved successfully!`);
+      // After booking, redirect to home page
+      window.location.href = 'index(24dce).html';
+    }
+  </script>
+
+    </div>
+
+
+    
+    <button><a href="#head"><i class="fas fa-arrow-up"></a></i></button>
+    
+    <!--Footer section-->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="aboutUs.html #team">Our team</a></li>
+                <li><a href="aboutUs.html #contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="feedback.html #reviews">Reviews</a></li>
+                <li><a href="feedback.html #feedback">Give your feedback</a></li>
+                <li><a href="feedback.html #faqs">FAQs</a></li>
+                
+            </ul>
+        </li>
+        
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+            
+        </li>
+
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+
+        </li>
+        
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+    <!-- Login protection script - requires login to access this page -->
+    <script src="loginProtection.js"></script>
+    
+    <!-- Login check script - shows History icon after login -->
+    <script src="loginCheck.js"></script>
+    
+    <!-- Back to top button script -->
+    <script src="backToTop.js"></script>
+    
+    <!-- Cart management script for nav badge (optional) -->
+    <script src="cartManager.js"></script>
+    
+    <!-- Search script: enables Enter to go to results -->
+    <script src="search.js"></script>
+
+</body>
+</html>
