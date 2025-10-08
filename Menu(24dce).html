@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load Font Awesome (add in the <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
+
+</head>
+<body>      
+    <!--Header for index page-->
+    
+    <header class="navigation">
+        <h1 align="center">B&B</h1>
+        <h2 align="center">Brew & Beyond</h2>
+        <nav>
+
+            <ul>
+                <div class="left">
+
+                    <!--left with hamburger icon to display all pages-->
+                    <li><a href="index(24dce).html">Home</a></li>
+                    <li><a href="aboutUs.html">About us</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li class="dropdown">Order ▾
+                        <ul class="dropdown-menu">
+                            <li><a href="order.html">Place order</a></li>
+                            <li><a href="table_book.html">Book a table</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="subs.html">Subscription</a></li>
+                </div>
+                
+                
+                
+                <div class="right">
+                    <!--Search icon-->
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>       <!--Font awesome icon library-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="login">
+                        <button><a href="login.html#Login">Login</a></button>&nbsp;&nbsp;
+                        
+                        <button><a href="login.html#Register">Register</a></button>
+                    </div>
+                    
+                    <div class="cart">
+
+                        <!--Symbol for cart-->
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    
+                    <!-- History icon with dropdown: Past Orders & My Reservations -->
+                    <div class="history dropdown">
+                        <i class="fas fa-clock"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="review(n buy).html #order_main">Past orders</a></li>
+                            <li><a href="myreservation.html">My reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--Center part-->
+    <div>
+        <!--upper center part-->
+        <div class="menu_upper">    
+            <ul>
+                <li>Menu</li>
+                
+                <li>bestsellers</li>
+            </ul>
+        </div>
+
+        <!-- left center part -->
+        <!-- anchor element to the same page add -->
+         <div class="center">
+
+             <div class="upper_center">
+                 <ul>
+                     <li><h3>Drinks</h3>
+                        <ul>
+                            <li><a href="#Tea">Tea</a></li>
+                            <li><a href="#Coffee">Coffee</a></li>
+                            <li><a href="#Refreshers">Refreshers</a></li>
+                            <li><a href="#Smoothies">Smoothies</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><h3>Food</h3>
+                        <ul>
+                            <li><a href="#breakfast">Breakfast & snacks</a></li>
+                            <li><a href="#Desserts">Desserts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+            
+
+            <!-- middle center part -->
+            <div class="middle_center">
+                <h3>Drinks</h3>
+                <hr>				<!-- long horizontal line below-->
+                <h4 id="Tea">Tea</h4>
+				<table>
+                    <tr>							<!--table row-->
+                        <td>Hot tea</td>			<!--table data cell-->
+						<td>₹45</td>
+					</tr>
+                    <tr>							<!--table row-->
+                        <td>Iced tea</td>			<!--table data cell-->
+						<td>₹110</td>
+					</tr>
+                    <tr>							<!--table row-->
+                        <td>Green tea</td>			<!--table data cell-->
+						<td>₹95</td>
+					</tr>
+				</table>
+                
+                <h4 id="Coffee">Coffee</h4>
+				<table>
+                    <tr>
+                        <td>Expresso</td>
+						<td>₹105</td>
+					</tr>
+					
+					<tr>
+                        <td>Latte</td>
+						<td>₹120</td>
+					</tr>
+					
+					<tr>
+                        <td>Americano</td>
+						<td>₹95</td>
+					</tr>
+                    <tr>
+                        <td>Mocha</td>
+                        <td>₹105</td>
+                    </tr>
+					<tr>
+                        <td>Cappucino</td>
+						<td>₹120</td>
+					</tr>
+				</table>
+                
+                <h4 id="Refreshers">Refreshers</h4>
+                <table>
+                    <tr>
+                        <td>Strawberry Lemonade Refresher</td>
+						<td>₹125</td>
+					</tr>
+                    <tr>
+                        <td>Mango Passionfruit Refresher</td>
+						<td>₹145</td>
+					</tr>
+                    <tr>
+                        <td>Mint Kiwi Refresher</td>
+						<td>₹145</td>
+					</tr>
+                    <tr>
+                        <td>Peach Refresher</td>
+                        <td>₹145</td>
+					</tr>
+				</table>
+                
+                <h4 id="Smoothies">Smoothies</h4>
+                <table>
+                    <tr>
+                        <td>Pina Colada Smoothie</td>
+						<td>₹185</td>
+					</tr>
+                    <tr>
+                        <td>Mango Tango Smoothie</td>
+						<td>₹165</td>
+					</tr>
+                    <tr>
+                        <td>Berry Blast Smoothie</td>
+                        <td>₹165</td>
+					</tr>
+                    <tr>
+                        <td>Strawberry Banana Smoothie</td>
+                        <td>₹185</td>
+					</tr>
+				</table>
+                
+                
+                <h3><br><br>Food</h3>
+                <hr>			<!-- long horizontal line below-->
+                <h4 id="breakfast">Breakfast & Snacks</h4>
+
+                    
+					
+
+
+					<tr>
+                        <td><b>Sandwiches</b>
+                            <table>
+                                <tr>
+
+                                    <td>Veggie Sandwich</td>
+                                    <td>₹249</td>
+                                </tr>
+                                <tr>
+                                    <td>Cheese Jam Sandwich</td>
+                                    <td>₹239</td>
+                                </tr>
+                                <tr>
+                                    <td>Cheese Corn Sandwich</td>
+                                    <td>₹259</td>
+                                </tr>
+                                <tr>
+                                    <td>B&B Special Sandwich</td>
+                                    <td>₹279</td>
+                                </tr>
+                            </table>
+                        </td>
+					</tr>
+					
+                <p><b>Pancakes</b></p>
+                <table>
+
+                    <tr>
+                        <td>Nutella Pancakes</td>
+						<td>₹155</td>
+					</tr>
+                    <tr>
+                        <td>Honey Glazed Pancakes</td>
+						<td>₹169</td>
+					</tr>
+                    <tr>
+                        <td>Blueberry Pancakes</td>
+						<td>₹175</td>
+					</tr>
+                    <tr>
+                        <td>Red Velvet Pancakes</td>
+						<td>₹175</td>
+					</tr>
+                </table>
+
+					<tr>
+                        <td><b>Crossiants</b>
+                            <table>
+                                <tr>
+
+                                    <td>Chocolate Croissant</td>
+                                    <td>₹255</td>
+                                </tr>
+                                <tr>
+                                    <td>Vanilla Croissant</td>
+                                    <td>₹255</td>
+                                </tr>
+                                <tr>
+                                    <td>Almond Croissant</td>
+                                    <td>₹265</td>
+                                </tr>
+                                <tr>
+                                    <td>B&B Special Croissant</td>
+                                    <td>₹285</td>
+                                </tr>
+                            </table>
+                        </td>
+					</tr>
+				</table>
+
+                <p><b>Cookies</b></p>
+				<table>
+					<tr>
+						<td>Chocolate Chip Cookies</td>
+						<td>₹115</td>
+					</tr>
+					<tr>
+                        <td>Oatmeal Raisin Cookies</td>
+                        <td>₹135</td>
+                    </tr>
+                    <tr>
+                        <td>Peanut Butter Cookies</td>
+                        <td>₹129</td>
+                    </tr>
+                </table>
+
+                <h4 id="Desserts">Desserts</h4>
+                <table>
+                    <tr>
+                        <td>Chocolate Lava Cake</td>
+						<td>₹388</td>
+					</tr>
+                    <tr>
+                        <td>Chocolate Mousse</td>
+						<td>₹349</td>
+					</tr>
+                    <tr>
+                        <td>Blueberry Cheesecake</td>
+                        <td>₹359</td>
+				</table>
+
+
+            </div>
+
+            <!-- left bottom images -->
+            <div class="left_bottom">
+                
+                <img src="../Images/coffeee.jpg" alt="coffee">
+                <img src="../Images/pinaColada.jpg" alt="smooties">
+                <img src="../Images/choco chipCookies.jpg" alt="cookies">
+                <img src="../Images/pancake1.jpg" alt="pancakes">
+                <img src="../Images/sandwich.jpg" alt="sandwich">
+                <img src="../Images/crossiant 1.jpg" alt="crossiant">
+                <img src="../Images/cheesecake.jpg" alt="cheesecake">
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <button><a href="#head"><i class="fas fa-arrow-up"></a></i></button>
+    
+    <!--Footer section-->
+    <footer>
+        <li>About us
+            <ul>
+                <li><a href="aboutUs.html #team">Our team</a></li>
+                <li><a href="aboutUs.html #contact">Contact us</a></li>
+            </ul>
+        </li>
+        
+        <li>Reviews
+            <ul>
+                <li><a href="feedback.html #reviews">Reviews</a></li>
+                <li><a href="feedback.html #feedback">Give your feedback</a></li>
+                <li><a href="feedback.html #faqs">FAQs</a></li>
+                
+            </ul>
+        </li>
+        
+
+        <li>Our product
+            <ul>
+                <li><a href="facts.html">Stories and facts</a></li>
+            </ul>
+            
+        </li>
+
+
+        <li>Subscription
+            <ul>
+                <li><a href="subs.html">Subscription and membership</a></li>
+            </ul>
+
+        </li>
+        
+    </footer>
+    <p id="foot" align="center">©Copyright, B&B cafe , 2025 Powered by amazon</p>
+
+    <!-- Search script: enables Enter to go to results -->
+    <script src="search.js"></script>
+    <!-- Login check script - shows History icon after login -->
+    <script src="loginCheck.js"></script>
+    
+    <!-- Back to top button script -->
+    <script src="backToTop.js"></script>
+
+</body>
+</html>
