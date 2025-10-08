@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    <!--123321-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <header class="navigation">
+    <h1 align="center">B&B</h1>
+    <h2 align="center">Brew & Beyond</h2>
+  </header>
+
+  <div id="AdminLogin" class="table_book" style="width: 40%;">
+    <h2>Admin Login</h2>
+    <form id="adminLoginForm" action="admin_login.php" method="post">
+      <section>
+        <label>Username</label><br>
+        <input name="username" type="text" placeholder="Admin username" required>
+      </section>
+      <section>
+        <label>Password</label><br>
+        <input name="password" type="password" placeholder="Password" required>
+      </section>
+      <section>
+        <button type="submit">Login</button>
+      </section>
+    </form>
+    <!-- <p>New admin? <a href="admin_register.html">Register here</a></p> -->
+  </div>
+
+  <script src="backToTop.js"></script>
+</body>
+</html>
+
+
