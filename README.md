@@ -78,7 +78,7 @@ The website is fully responsive and optimized for all screen sizes using rem/em 
 
 ## 📣 Credits
 
-Designed and developed by [Your Name]. Icons from [Font Awesome](https://fontawesome.com/).
+Designed and developed by Ayaan Mansuri. Icons from [Font Awesome](https://fontawesome.com/).
 
 ---
 
